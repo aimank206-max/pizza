@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Eddie’s Pizza | Thin-Crust Bar Pies in New Hyde Park, NY</title>
+<meta name="description" content="Family-run bar and restaurant since 1931. Thin-crust bar pies, cocktails and game day at 2048 Hillside Ave, New Hyde Park, NY.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#12281c; --green2:#1b3a29; --red:#e5392f; --gold:#f4b942; --paper:#f7f3e8; --ink:#1a1a17; --muted:#5b5a50;
+  --bg:var(--green); --fg:#f7f3e8;
+  --display:"Alfa Slab One","Rockwell","Georgia",serif; --body:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#171a15;--ink:#f1ede0;--muted:#b4b2a3}}
+:root[data-theme="dark"]{--paper:#171a15;--ink:#f1ede0;--muted:#b4b2a3}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--green);color:var(--fg);font:400 17px/1.6 var(--body)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.05;margin:0}
+h2{font-size:clamp(2rem,5vw,3.2rem)}
+.btn{display:inline-block;padding:14px 24px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid var(--gold);transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.solid{background:var(--gold);color:#241a02}
+.btn.ghost{color:var(--gold)}
+
+/* header */
+header.top{position:sticky;top:0;z-index:20;background:rgba(18,40,28,.94);backdrop-filter:blur(8px);padding-top:env(safe-area-inset-top,0px);border-bottom:1px solid rgba(247,243,232,.12)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px}
+.logo{font-family:var(--display);font-size:1.3rem;text-decoration:none;color:var(--gold)}
+nav{display:flex;gap:22px;align-items:center;font-weight:500;font-size:.95rem}
+nav a{text-decoration:none;opacity:.85}nav a:hover{opacity:1}
+nav .call{background:var(--red);color:#fff;padding:8px 16px;border-radius:999px;font-weight:700;opacity:1}
+@media(max-width:700px){nav a:not(.call){display:none}}
+
+/* hero */
+.hero{padding:72px 0 80px;text-align:center;background:radial-gradient(ellipse at 50% 0,#235238 0,transparent 65%)}
+.sign{display:inline-block;padding:26px 40px 30px;border:4px solid var(--red);border-radius:22px;box-shadow:0 0 18px rgba(229,57,47,.55),inset 0 0 18px rgba(229,57,47,.45)}
+.sign h1{font-size:clamp(3.2rem,12vw,7rem);color:#ffd9d5;text-shadow:0 0 6px #ff6b60,0 0 18px var(--red),0 0 38px var(--red);animation:flick 4s 1s 1 both}
+.sign small{display:block;font-weight:700;letter-spacing:.22em;color:var(--gold);margin-top:8px;text-shadow:0 0 10px rgba(244,185,66,.6)}
+@keyframes flick{0%,18%,22%,60%{opacity:1}20%,24%{opacity:.35}}
+@media(prefers-reduced-motion:reduce){.sign h1{animation:none}html{scroll-behavior:auto}.btn{transition:none}}
+.hero p.lead{max-width:34rem;margin:34px auto 28px;font-size:1.2rem}
+.cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.status{margin-top:26px;font-size:.95rem;opacity:.85}
+
+/* facts band */
+.facts{background:var(--gold);color:#241a02}
+.facts ul{list-style:none;margin:0 auto;padding:22px;max-width:1080px;display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:18px;text-align:center}
+.facts b{display:block;font-family:var(--display);font-weight:400;font-size:1.7rem;line-height:1.1}
+.facts span{font-size:.92rem;font-weight:500}
+
+/* light sections */
+.light{background:var(--paper);color:var(--ink)}
+.light .muted{color:var(--muted)}
+section{padding:84px 0}
+.check{height:22px;background:conic-gradient(var(--red) 25%,#fff 0 50%,var(--red) 0 75%,#fff 0) 0 0/44px 44px;background-position:0 0}
+
+/* bar pie feature */
+.pie{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.pie p{margin:18px 0 0;max-width:34rem}
+.pie ul{margin:22px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:10px}
+.pie li{border:2px solid var(--red);color:var(--red);border-radius:999px;padding:5px 14px;font-weight:700;font-size:.9rem}
+.pie svg{width:100%;max-width:380px;margin:0 auto;display:block}
+@media(max-width:760px){.pie{grid-template-columns:1fr}}
+
+/* menu */
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:36px 44px;margin-top:44px}
+.menu-grid h3{font-size:1.5rem;color:var(--red);padding-bottom:8px;border-bottom:3px double var(--red);margin-bottom:12px}
+.menu-grid ul{list-style:none;margin:0;padding:0}
+.menu-grid li{padding:7px 0;border-bottom:1px dotted rgba(128,128,110,.5);display:flex;justify-content:space-between;gap:10px}
+.menu-grid li em{font-style:normal;font-size:.8rem;font-weight:700;color:var(--green2);background:var(--gold);padding:1px 9px;border-radius:99px;align-self:center;white-space:nowrap}
+.note{margin-top:34px;font-size:.95rem}
+
+/* reviews */
+.reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-top:40px}
+blockquote{margin:0;padding:26px;border-left:6px solid var(--gold);background:var(--green2);border-radius:0 14px 14px 0;font-size:1.25rem;line-height:1.4;font-weight:500}
+blockquote cite{display:block;margin-top:12px;font-size:.9rem;font-style:normal;color:var(--gold)}
+.stars{color:var(--gold);letter-spacing:.1em;font-size:1.3rem}
+.big{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-top:14px}
+.big b{font-family:var(--display);font-weight:400;font-size:3.4rem;color:var(--gold)}
+
+/* catering */
+.truck{background:var(--red);color:#fff}
+.truck .wrap{display:flex;gap:30px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.truck p{max-width:36rem;margin:12px 0 0}
+.truck .btn{background:#fff;border-color:#fff;color:#7a1710}
+
+/* visit */
+.visit{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+@media(max-width:760px){.visit{grid-template-columns:1fr}}
+.visit dl{margin:26px 0 0}
+.visit dt{font-weight:700;margin-top:18px}
+.visit dd{margin:2px 0 0}
+.visit .btn{margin:24px 12px 0 0}
+.visit .btn.solid{border-color:var(--red);background:var(--red);color:#fff}
+.visit .btn.ghost{border-color:var(--red);color:var(--red)}
+.busy{background:var(--green);color:var(--fg);border-radius:18px;padding:28px}
+.busy h3{font-size:1.6rem;color:var(--gold)}
+.busy p{margin:12px 0 0}
+
+footer{background:#0b1a12;padding:40px 0 48px;text-align:center;font-size:.92rem;opacity:.95}
+footer .logo{font-size:1.6rem;display:block;margin-bottom:8px}
+footer a{margin:0 8px}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top">Eddie’s</a>
+    <nav aria-label="Main">
+      <a href="#menu">Menu</a><a href="#reviews">Reviews</a><a href="#catering">Catering</a><a href="#visit">Visit</a>
+      <a class="call" href="tel:+15163549780">Call 516-354-9780</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<div class="hero">
+  <div class="wrap">
+    <div class="sign"><h1>Eddie’s Pizza</h1><small>BAR PIES · SINCE 1931</small></div>
+    <p class="lead">Crispy thin-crust bar pies, cold drinks and the game on. A neighborhood joint in New Hyde Park, run by the same family for generations.</p>
+    <div class="cta">
+      <a class="btn solid" href="tel:+15163549780">Call to order</a>
+      <a class="btn ghost" href="https://www.google.com/maps/dir/?api=1&destination=2048+Hillside+Ave+New+Hyde+Park+NY+11040" target="_blank" rel="noopener">Get directions</a>
+    </div>
+    <p class="status">Opens at 11 am. Walk-ins only, no reservations.</p>
+  </div>
+</div>
+
+<div class="facts"><ul>
+  <li><b>4.5 stars</b><span>from 737 Google reviews</span></li>
+  <li><b>1931</b><span>serving the neighborhood</span></li>
+  <li><b>$20–30</b><span>per person</span></li>
+  <li><b>15 min</b><span>usual wait at the 7 pm rush</span></li>
+</ul></div>
+<div class="check" aria-hidden="true"></div>
+
+<section class="light" id="pies">
+  <div class="wrap pie">
+    <div>
+      <h2>The bar pie</h2>
+      <p>Our famous Bar Pie is a personal-size thin-crust pie with a crisp edge and cheese and sauce in equal measure. Order Eddie’s Special, or build your own.</p>
+      <p class="muted">Gluten-free slices and whole wheat bar pies are available.</p>
+      <ul><li>Eddie’s Special</li><li>With meatball</li><li>Everything</li><li>Onions &amp; peppers</li><li>Extra cheese</li><li>Whole wheat</li><li>Gluten free</li></ul>
+    </div>
+    <svg viewBox="0 0 400 400" role="img" aria-label="Illustration of a thin-crust pizza with pepperoni">
+      <circle cx="200" cy="200" r="190" fill="#d9993a"/>
+      <circle cx="200" cy="200" r="172" fill="#e5392f"/>
+      <circle cx="200" cy="200" r="158" fill="#f4b942" opacity=".92"/>
+      <g fill="#c22b22"><circle cx="140" cy="130" r="26"/><circle cx="262" cy="120" r="26"/><circle cx="310" cy="215" r="26"/><circle cx="240" cy="290" r="26"/><circle cx="120" cy="260" r="26"/><circle cx="200" cy="200" r="26"/></g>
+      <g fill="#12281c"><path d="M175 85l12 22-24-4z"/><path d="M300 290l-4 24-18-16z"/><path d="M85 200l22-8-6 24z"/><path d="M215 330l4-20 18 10z"/></g>
+    </svg>
+  </div>
+</section>
+
+<div class="check" aria-hidden="true"></div>
+<section class="light" id="menu" style="padding-top:64px">
+  <div class="wrap">
+    <h2>What’s on the menu</h2>
+    <p class="muted">Customer favorites. Call us for today’s full menu and prices.</p>
+    <div class="menu-grid">
+      <div><h3>Pizza</h3><ul>
+        <li>Bar Pie, Eddie’s Special <em>Famous</em></li><li>Bar Pie with Meatball</li><li>Everything Pizza</li><li>Pizza with Onions and Peppers</li><li>Whole Wheat Bar Pie</li><li>Extra Cheese</li></ul></div>
+      <div><h3>Starters</h3><ul>
+        <li>Baked Clams <em>Local pick</em></li><li>Chicken Wings</li><li>Mozzarella Sticks</li><li>Zucchini Sticks</li><li>Coconut Shrimp</li><li>Garlic Bread</li></ul></div>
+      <div><h3>Soups and salads</h3><ul>
+        <li>French Onion</li><li>Lentil Soup</li><li>Garden Salad</li></ul>
+        <h3 style="margin-top:28px">Dinner</h3><ul><li>Chicken Francese</li><li>Large Meatball</li></ul></div>
+      <div><h3>From the bar</h3><ul>
+        <li>Apple Martini</li><li>Jameson Irish Whiskey</li><li>Beer, wine and cocktails</li></ul></div>
+    </div>
+    <p class="note muted">Gluten-free options available. Ask about allergens when you order.</p>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="wrap">
+    <h2>Regulars say it best</h2>
+    <div class="big"><b>4.5</b><div><div class="stars" aria-label="4.5 out of 5 stars">★★★★★</div><div>737 reviews on Google</div></div></div>
+    <div class="reviews">
+      <blockquote>“Crispy thin crust, equal parts cheese and sauce.”<cite>Christopher Neal</cite></blockquote>
+      <blockquote>“Food, service and staff are great.”<cite>Anthony P</cite></blockquote>
+    </div>
+    <p style="margin-top:30px"><a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=Eddie%27s+Pizza+2048+Hillside+Ave+New+Hyde+Park+NY" target="_blank" rel="noopener">Read all reviews on Google</a></p>
+  </div>
+</section>
+
+<div class="truck" id="catering"><section style="padding:64px 0"><div class="wrap">
+  <div><h2>Eddie’s Pizza Truck</h2><p>Hosting a party, wedding or company event? Our catering food truck serves NYC, New Jersey, Connecticut and the whole tri-state area.</p></div>
+  <a class="btn" href="mailto:info@eddiespizzany.com?subject=Catering%20quote">Email for a quote</a>
+</div></section></div>
+
+<section class="light" id="visit">
+  <div class="wrap visit">
+    <div>
+      <h2>Come hungry</h2>
+      <dl>
+        <dt>Address</dt><dd>2048 Hillside Ave.<br>New Hyde Park, NY 11040</dd>
+        <dt>Phone</dt><dd><a href="tel:+15163549780">516-354-9780</a></dd>
+        <dt>Hours</dt><dd>Opens daily at 11 am. Call to confirm closing time.</dd>
+        <dt>Good to know</dt><dd>No reservations. Great for watching the game. Most visits last 30 minutes to 1.5 hours.</dd>
+      </dl>
+      <a class="btn solid" href="https://www.google.com/maps/dir/?api=1&destination=2048+Hillside+Ave+New+Hyde+Park+NY+11040" target="_blank" rel="noopener">Get directions</a>
+      <a class="btn ghost" href="tel:+15163549780">Call us</a>
+    </div>
+    <div class="busy">
+      <h3>When to come</h3>
+      <p>7 pm is our busiest hour, with a wait of up to 15 minutes. Come earlier in the evening or at lunch for a table right away.</p>
+      <p>Pies to go? Call ahead and we’ll have it boxed when you arrive.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="logo" href="#top">Eddie’s Pizza</a>
+    <p>2048 Hillside Ave., New Hyde Park, NY 11040</p>
+    <p><a href="tel:+15163549780">516-354-9780</a><a href="mailto:info@eddiespizzany.com">info@eddiespizzany.com</a><a href="https://www.instagram.com/eddiespizza" target="_blank" rel="noopener">Instagram</a></p>
+  </div>
+</footer>
+</body>
+</html>
